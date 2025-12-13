@@ -4,7 +4,7 @@ Because i have to know C/C++
 
 # What you are going to create?
 
-Well, it would be cool if i was able to create the whole messanger, lets see
+Well, it would be cool if i was able to create the whole messenger, lets see
 what it will be.
 
 But i think, i can make a program, that will contain the whole level 1 
