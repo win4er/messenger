@@ -1,0 +1,8 @@
+all : main_client.o
+	g++ main_client.o -g -o client
+
+main_client.o : main_client.cpp
+	g++ -c main_client.cpp -g
+
+clean :
+	rm -rf *.o *.out client

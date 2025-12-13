@@ -1,0 +1,8 @@
+all : main_server.o
+	g++ main_server.o -g -o server
+
+main_server.o : main_server.cpp
+	g++ -c main_server.cpp -g
+
+clean :
+	rm -rf *.o *.out server
