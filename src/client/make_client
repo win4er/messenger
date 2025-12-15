@@ -1,0 +1,50 @@
+OS ?= $(shell echo %OS% 2>/dev/null)
+
+IS_WINDOWS := 0
+IS_UNIX := 0
+
+if (( $(OS)==Windows_NT )); then
+IS_WINDOWS := 1
+else
+	UNAME_S := $(shell uname -s 2>/dev/null)
+	
+	# Not Windows, lets find out the OS then
+	ifeq ($(UNAME_S), Linux)
+		IS_UNIX := 1
+	else ifeq ($(UNAME_S), Darwin) # macOS
+		IS_UNIX := 1
+	
+	# Detect Windows subsystems (MINGW64, CYGWIN, etc...)
+	else ifneq ($(filter MINGW%, $(UNAME_S)),) # Git Bash/MinGW
+		IS_WINDOWS := 1
+	else ifneq ($(filter CYGWIN%, $(UNAME_S)),) # Cygwin
+		IS_WINDOWS := 1
+	else
+		# then it's probably Unix-like system
+		IS_UNIX := 1
+	endif
+endif
+
+
+all : client.o
+	ifeq ($(IS_WINDOWS),1)
+		g++ client.o -lwsock32 -lws2_32 -g -o client
+	endif
+    
+	ifeq ($(IS_UNIX), 1)
+	g++ client.o -g -o client
+	endif
+
+client.o : client.cpp
+	g++ -c client.cpp
+
+clean :
+	ifeq ($(IS_WINDOWS), 1)
+		rm -rf *.o
+		rm -rf *.out
+		rm -rf client
+	endif
+	
+	ifeq ($(IS_UNIX), 1)
+		rm -rf *.o *.out client
+	endif

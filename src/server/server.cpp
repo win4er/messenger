@@ -1,17 +1,4 @@
-#include <assert.h>
-#include <iostream>
-#include <netinet/in.h>
-#include <sys/socket.h>
-#include <sys/types.h>
-#include <arpa/inet.h>
-#include <unistd.h>
-#include <cstring>
-#include <map>
-#include <string>
-#include <vector>
-#include <chrono>
-#include <fstream>
-
+#include "server.hpp"
 
 std::vector<int> ID_CLIENT_AR;
 std::vector<std::string> NAME_CLIENT_AR;
@@ -20,21 +7,21 @@ std::vector<std::string> NAME_CLIENT_AR;
 
 bool check_w(std::string word1, std::string word2) {
     if (word1.size() + 1 == word2.size()) {
-	for (int i = 0; i < word1.size(); ++i) {
-	    if (word1[i] != word2[i]) {
-		return false;
-	    }
-	}
-	return true;
+        for (int i = 0; i < word1.size(); ++i) {
+            if (word1[i] != word2[i]) {
+            return false;
+            }
+        }
+        return true;
     }
     return false;
 }
 
 bool check_id(std::vector<int> vector, int element) {
     for (int i = 0; i < vector.size(); ++i) {
-	if (vector[i] == element) {
-	    return true;
-	}
+        if (vector[i] == element) {
+            return true;
+        }
     }
     return false;
 }
@@ -42,42 +29,42 @@ bool check_id(std::vector<int> vector, int element) {
 bool check_el(char* ar, char element) {
     int length = sizeof(ar) / sizeof(char);
     for (int i = 0; i < length; ++i) {
-	if (ar[i] == element) {
-	    return true;
-	}
+        if (ar[i] == element) {
+            return true;
+        }
     }
     return false;
 }
 
 int get_id(std::vector<std::string> vector, std::string element) {
     for (int i = 0; i < vector.size(); ++i) {
-	if (vector[i] == element) {
-	    return i;
-	}
+        if (vector[i] == element) {
+            return i;
+        }
     }
     return -1;
 }
 
 int get_id_s(std::vector<int> vector, int element) {
     for (int i = 0; i < vector.size(); ++i) {
-	if (vector[i] == element) {
-	    return i;
-	}
+        if (vector[i] == element) {
+            return i;
+        }
     }
     return -1;
 }
 
 bool check_name(std::vector<std::string> ar, std::string element) {
     for (int i = 0; i < ar.size(); ++i) {
-	if (ar[i] == element) {
-	    return true;
-	}
+        if (ar[i] == element) {
+            return true;
+        }
     }
     return false;
 }
 
 std::string get_translate(std::string word) {
-    std::ifstream file("ENRUS.TXT");
+    std::ifstream file("enrus.txt");
     std::string result;
     bool flag = false;
     while (std::getline(file, result)) {
@@ -189,34 +176,3 @@ void* th1(void* arg) {
 }
 
 
-int main(int argc, const char* argv[]) {
-    std::cout << "my not full server... v3.0 not to much secret " << std::endl;
-    
-    int id_socket = socket(AF_INET, SOCK_STREAM, 0);
-    
-    assert(id_socket > 0);
-
-    sockaddr_in addr;
-    addr.sin_family = AF_INET;
-    addr.sin_port = htons(atoi(argv[1]));
-    addr.sin_addr.s_addr = INADDR_ANY;
-
-    int res = bind(id_socket, (sockaddr*)&addr, sizeof(addr));
-    assert(res == 0);
-
-    res = listen(id_socket, 32);
-
-    pthread_t id_thread;
-    
-    while(1) {
-    	int id_client = accept(id_socket, nullptr, nullptr);
-    	assert(id_client > 0);
-	auto now = std::chrono::steady_clock::now();
-	//TIME_CONNECTION_AR.push_back(now);
-    	pthread_create(&id_thread, nullptr, th1, &id_client);
-	//check_timeout();
-    }
-
-    close(id_socket);
-    return 0;
-}
