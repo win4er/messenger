@@ -8,7 +8,7 @@ set(CMAKE_CXX_COMPILER ${PATH_TO_CXX_COMPILER})
 set(CMAKE_C_COMPILER ${PATH_TO_C_COMPILER})
 
 # Имя проекта
-project(client VERSION 1.0)
+project(server VERSION 1.0)
 set(CMAKE_CXX_STANDARD 17)
 add_definitions(-D_LIB1_BUILD_DLL)
 link_libraries(ws2_32 wsock32)

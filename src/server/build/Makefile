@@ -129,24 +129,24 @@ server_lib/fast:
 .PHONY : server_lib/fast
 
 #=============================================================================
-# Target rules for targets named client
+# Target rules for targets named server
 
 # Build rule for target.
-client: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 client
-.PHONY : client
+server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 server
+.PHONY : server
 
 # fast build rule for target.
-client/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\client.dir\build.make CMakeFiles/client.dir/build
-.PHONY : client/fast
+server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/build
+.PHONY : server/fast
 
 main_server.obj: main_server.cpp.obj
 .PHONY : main_server.obj
 
 # target to build an object file
 main_server.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\client.dir\build.make CMakeFiles/client.dir/main_server.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/main_server.cpp.obj
 .PHONY : main_server.cpp.obj
 
 main_server.i: main_server.cpp.i
@@ -154,7 +154,7 @@ main_server.i: main_server.cpp.i
 
 # target to preprocess a source file
 main_server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\client.dir\build.make CMakeFiles/client.dir/main_server.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/main_server.cpp.i
 .PHONY : main_server.cpp.i
 
 main_server.s: main_server.cpp.s
@@ -162,7 +162,7 @@ main_server.s: main_server.cpp.s
 
 # target to generate assembly for a file
 main_server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\client.dir\build.make CMakeFiles/client.dir/main_server.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/main_server.cpp.s
 .PHONY : main_server.cpp.s
 
 server.obj: server.cpp.obj
@@ -171,7 +171,7 @@ server.obj: server.cpp.obj
 # target to build an object file
 server.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\server_lib.dir\build.make CMakeFiles/server_lib.dir/server.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\client.dir\build.make CMakeFiles/client.dir/server.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/server.cpp.obj
 .PHONY : server.cpp.obj
 
 server.i: server.cpp.i
@@ -180,7 +180,7 @@ server.i: server.cpp.i
 # target to preprocess a source file
 server.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\server_lib.dir\build.make CMakeFiles/server_lib.dir/server.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\client.dir\build.make CMakeFiles/client.dir/server.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/server.cpp.i
 .PHONY : server.cpp.i
 
 server.s: server.cpp.s
@@ -189,7 +189,7 @@ server.s: server.cpp.s
 # target to generate assembly for a file
 server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\server_lib.dir\build.make CMakeFiles/server_lib.dir/server.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\client.dir\build.make CMakeFiles/client.dir/server.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/server.cpp.s
 .PHONY : server.cpp.s
 
 # Help Target
@@ -200,7 +200,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... client
+	@echo ... server
 	@echo ... server_lib
 	@echo ... main_server.obj
 	@echo ... main_server.i

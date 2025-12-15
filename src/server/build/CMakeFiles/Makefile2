@@ -63,12 +63,12 @@ CMAKE_BINARY_DIR = D:\projects\messanger\src\server\build
 
 # The main recursive "all" target.
 all: CMakeFiles/server_lib.dir/all
-all: CMakeFiles/client.dir/all
+all: CMakeFiles/server.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/server_lib.dir/codegen
-codegen: CMakeFiles/client.dir/codegen
+codegen: CMakeFiles/server.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -77,7 +77,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/server_lib.dir/clean
-clean: CMakeFiles/client.dir/clean
+clean: CMakeFiles/server.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -113,36 +113,36 @@ CMakeFiles/server_lib.dir/clean:
 .PHONY : CMakeFiles/server_lib.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/client.dir
+# Target rules for target CMakeFiles/server.dir
 
 # All Build rule for target.
-CMakeFiles/client.dir/all: CMakeFiles/server_lib.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\client.dir\build.make CMakeFiles/client.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\client.dir\build.make CMakeFiles/client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\projects\messanger\src\server\build\CMakeFiles --progress-num=1,2,3 "Built target client"
-.PHONY : CMakeFiles/client.dir/all
+CMakeFiles/server.dir/all: CMakeFiles/server_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\projects\messanger\src\server\build\CMakeFiles --progress-num=1,2,3 "Built target server"
+.PHONY : CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/client.dir/rule: cmake_check_build_system
+CMakeFiles/server.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\projects\messanger\src\server\build\CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/client.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\projects\messanger\src\server\build\CMakeFiles 0
-.PHONY : CMakeFiles/client.dir/rule
+.PHONY : CMakeFiles/server.dir/rule
 
 # Convenience name for target.
-client: CMakeFiles/client.dir/rule
-.PHONY : client
+server: CMakeFiles/server.dir/rule
+.PHONY : server
 
 # codegen rule for target.
-CMakeFiles/client.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\client.dir\build.make CMakeFiles/client.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\projects\messanger\src\server\build\CMakeFiles --progress-num=1,2,3 "Finished codegen for target client"
-.PHONY : CMakeFiles/client.dir/codegen
+CMakeFiles/server.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\projects\messanger\src\server\build\CMakeFiles --progress-num=1,2,3 "Finished codegen for target server"
+.PHONY : CMakeFiles/server.dir/codegen
 
 # clean rule for target.
-CMakeFiles/client.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\client.dir\build.make CMakeFiles/client.dir/clean
-.PHONY : CMakeFiles/client.dir/clean
+CMakeFiles/server.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/clean
+.PHONY : CMakeFiles/server.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

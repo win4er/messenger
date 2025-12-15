@@ -1,4 +1,4 @@
-CMakeFiles/client.dir/main_server.cpp.obj: \
+CMakeFiles/server.dir/main_server.cpp.obj: \
  D:\projects\messanger\src\server\main_server.cpp \
  D:\projects\messanger\src\server\server.hpp \
  D:/programs/mingw64/x86_64-w64-mingw32/include/winsock2.h \

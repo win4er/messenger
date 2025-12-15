@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/projects/messanger/src/server/main_server.cpp" "CMakeFiles/client.dir/main_server.cpp.obj" "gcc" "CMakeFiles/client.dir/main_server.cpp.obj.d"
-  "D:/projects/messanger/src/server/server.cpp" "CMakeFiles/client.dir/server.cpp.obj" "gcc" "CMakeFiles/client.dir/server.cpp.obj.d"
+  "D:/projects/messanger/src/server/main_server.cpp" "CMakeFiles/server.dir/main_server.cpp.obj" "gcc" "CMakeFiles/server.dir/main_server.cpp.obj.d"
+  "D:/projects/messanger/src/server/server.cpp" "CMakeFiles/server.dir/server.cpp.obj" "gcc" "CMakeFiles/server.dir/server.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

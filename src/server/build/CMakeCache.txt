@@ -110,7 +110,7 @@ CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=D:/projects/messanger/src/server/build/C
 CMAKE_GNUtoMS:BOOL=OFF
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/client
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/server
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=D:/programs/mingw64/bin/ld.exe
@@ -157,7 +157,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=client
+CMAKE_PROJECT_NAME:STATIC=server
 
 //Value Computed by CMake
 CMAKE_PROJECT_SPDX_LICENSE:STATIC=
@@ -267,13 +267,13 @@ WS2_32_LIB:FILEPATH=WS2_32_LIB-NOTFOUND
 WSOCK32_LIB:FILEPATH=WSOCK32_LIB-NOTFOUND
 
 //Value Computed by CMake
-client_BINARY_DIR:STATIC=D:/projects/messanger/src/server/build
+server_BINARY_DIR:STATIC=D:/projects/messanger/src/server/build
 
 //Value Computed by CMake
-client_IS_TOP_LEVEL:STATIC=ON
+server_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-client_SOURCE_DIR:STATIC=D:/projects/messanger/src/server
+server_SOURCE_DIR:STATIC=D:/projects/messanger/src/server
 
 //Dependencies for the target
 server_lib_LIB_DEPENDS:STATIC=general;ws2_32;general;wsock32;
