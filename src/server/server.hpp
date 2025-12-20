@@ -1,12 +1,12 @@
 #ifndef SERVER_HPP
 #define SERVER_HPP
 
-#ifdef _WIN32
+#ifdef _WIN32 // to build project for windows systems
 #define WIN32_LEAN_AND_MEAN // to avoid conflicts
 #include <winsock2.h>
 #endif
 
-#ifdef __linux__
+#ifdef __linux__ // to build project for linux systems
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
@@ -15,16 +15,16 @@
 
 #include <sys/types.h>
 
-#include <iostream>
-#include <assert.h>
+#include <iostream> // basic I/O lib
+#include <assert.h> // just for DEBUGGING i think
 #include <cstring>
-#include <thread>
+#include <thread> // to make another thread, i need async programming later
 
-#include <map>
-#include <string>
-#include <vector>
-#include <chrono>
-#include <fstream>
+#include <map> // just to store some BS
+#include <string> // no comments
+#include <vector> // no comments
+#include <chrono> // to write some time-related bullshit
+#include <fstream> // to make/write files
 
 bool check_w(std::string word1, std::string word2);
 bool check_id(std::vector<int> vector, int element);
