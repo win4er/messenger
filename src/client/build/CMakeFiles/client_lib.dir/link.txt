@@ -1,2 +1,0 @@
-D:\programs\mingw64\bin\ar.exe qc libclient_lib.a CMakeFiles/client_lib.dir/client.cpp.obj
-D:\programs\mingw64\bin\ranlib.exe libclient_lib.a
