@@ -26,3 +26,11 @@ level 1:
 + [9] Remote Command Execution (RCE, also main feature, i would like to create a Trojan)
 + [10] Recreate the Netcat tool (LETS FUCKING GO)
 
+# How to run it?
+1. You have to move on to src/client/ and src/server/ dirs\
+2. then You have to make build dir: mkdir build\
+3. Windows: Now, You move on build dir and run this 2 commands:
+ + cmake -G "MinGW Makefiles" ..
+ + cmake --build .
+4. Now You can run client.exe or server.exe, but server.exe should be first...
+
