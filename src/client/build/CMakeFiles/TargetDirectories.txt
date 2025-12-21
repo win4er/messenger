@@ -1,0 +1,4 @@
+D:/projects/messanger/src/client/build/CMakeFiles/client_lib.dir
+D:/projects/messanger/src/client/build/CMakeFiles/client.dir
+D:/projects/messanger/src/client/build/CMakeFiles/edit_cache.dir
+D:/projects/messanger/src/client/build/CMakeFiles/rebuild_cache.dir

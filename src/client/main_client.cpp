@@ -1,18 +1,20 @@
 #include "client.hpp"
 
 enum CFG {
-	IPv4 = AF_INET;
-	IPv6 = AF_INET6;
-	TCP = SOCK_STREAM;
-	UDP = SOCK_DGRAM;
-}
+	IPv4 = AF_INET,
+	IPv6 = AF_INET6,
+	TCP = SOCK_STREAM,
+	UDP = SOCK_DGRAM,
+};
 
-std::string ADDRESS = "127.0.0.1";
+const char* ADDRESS = "127.0.0.1";
+char BUFFER[32] = {0};
+
 
 int main(int argc, char** argv) {
     int sin_port = std::stoi(argv[1]); // number of port
     std::string name = argv[2]; // Username
-    int id_socket = socket(IPv4, TCP, IPPROTO_TCP); // ini the socket i guess
+    int id_socket = socket(CFG::IPv4, CFG::TCP, IPPROTO_TCP); // ini the socket i guess
     assert(id_socket > 0); // just for debugging: make sure server is online
 	
 	// just a config for making a socket connection in case we want get data
@@ -20,7 +22,7 @@ int main(int argc, char** argv) {
     addr.sin_addr.s_addr = inet_addr(ADDRESS);
     std::cout << ADDRESS << "  " << inet_addr(ADDRESS) << std::endl;
     addr.sin_port = htons(sin_port);
-    addr.sin_family = IPv4;
+    addr.sin_family = CFG::IPv4;
 
 	// here we see a connection, res = count of received bytes i guess
     int res = connect(id_socket, (sockaddr *)&addr, sizeof(addr));
@@ -32,10 +34,7 @@ int main(int argc, char** argv) {
     write(id_socket, name.c_str(), name.size() + 1, 0);
     #endif
     
-	const int BUFF_SIZE = 64;
-	char BUFFER_[BUFF_SIZE];
-
-    std::thread th(thread_recv, id_socket, BUFFER_[BUFF_SIZE], BUF_SIZE);
+    std::thread th(thread_recv, id_socket);
     th.detach();
     
     std::string message;

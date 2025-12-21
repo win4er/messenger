@@ -1,11 +1,11 @@
 #include "server.hpp"
 
 enum CFG {
-	IPv4 = AF_INET;
-	IPv6 = AF_INET6;
-	TCP = SOCK_STREAM;
-	UDP = SOCK_DGRAM;
-}
+	IPv4 = AF_INET,
+	IPv6 = AF_INET6,
+	TCP = SOCK_STREAM,
+	UDP = SOCK_DGRAM,
+};
 
 const int AMOUNT = 32;
 
@@ -17,11 +17,11 @@ int main(int argc, const char* argv[]) {
 	// as a default protocol,
 	// because i already
 	// selected TCP as a 'type' arg
-	int id_socket = socket(IPv4, TCP, IPPROTO_TCP);
+	int id_socket = socket(CFG::IPv4, CFG::TCP, IPPROTO_TCP);
     assert(id_socket > 0);
 
     sockaddr_in addr;
-    addr.sin_family = IPv4;
+    addr.sin_family = CFG::IPv4;
     addr.sin_port = htons(atoi(argv[1]));
     addr.sin_addr.s_addr = INADDR_ANY;
 

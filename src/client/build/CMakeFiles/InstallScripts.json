@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/projects/messanger/src/client/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,2 @@
+D:\programs\mingw64\bin\ar.exe qc libserver_lib.a CMakeFiles/server_lib.dir/server.cpp.obj
+D:\programs\mingw64\bin\ranlib.exe libserver_lib.a
