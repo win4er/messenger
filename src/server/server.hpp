@@ -6,25 +6,25 @@
 #include <winsock2.h>
 #endif
 
-#ifdef __linux__ // to build project for linux systems
-#include <netinet/in.h>
-#include <sys/socket.h>
-#include <arpa/inet.h>
+#ifdef __linux__        // to build project for linux systems
+#include <arpa/inet.h>  // for Unix-like systems
+#include <netinet/in.h> // for Unix-like systems
+#include <sys/socket.h> // bind(), connect(), listen(), accept()
 #include <unistd.h>
 #endif
 
-#include <sys/types.h>
+#include <sys/types.h>  // bind(), connect(), listen(), accept()
 
-#include <iostream> // basic I/O lib
-#include <assert.h> // just for DEBUGGING i think
+#include <iostream>     // basic I/O lib
+#include <assert.h>     // just for DEBUGGING i think
 #include <cstring>
-#include <thread> // to make another thread, i need async programming later
+#include <thread>       // to make another thread, i need async programming later
 
-#include <map> // just to store some BS
-#include <string> // no comments
-#include <vector> // no comments
-#include <chrono> // to write some time-related bullshit
-#include <fstream> // to make/write files
+#include <map>          // just to store some BS
+#include <string>       // no comments
+#include <vector>       // no comments
+#include <chrono>       // to write some time-related bullshit
+#include <fstream>      // to make/write files
 
 bool check_w(std::string word1, std::string word2);
 bool check_id(std::vector<int> vector, int element);
