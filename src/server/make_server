@@ -1,8 +1,0 @@
-all : server.o
-	g++ server.o -g -o server
-
-server.o : server.cpp
-	g++ -c server.cpp -g
-
-clean :
-	rm -rf *.o *.out server
