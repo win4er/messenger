@@ -14,7 +14,18 @@ char BUFFER[32] = {0};
 int main(int argc, char** argv) {
     int sin_port = std::stoi(argv[1]); // number of port
     std::string name = argv[2]; // Username
-    int id_socket = socket(CFG::IPv4, CFG::TCP, IPPROTO_TCP); // ini the socket i guess
+	
+	#ifdef _WIN32
+	WSADATA ws = {0};
+    int v = WSAStartup(MAKEWORD(2,2), &ws);
+	if (v != 0) {
+		printf("error initialising winsock: %d\n", v);
+        getchar();
+        return 1;
+    }
+	#endif
+    
+	int id_socket = socket(CFG::IPv4, CFG::TCP, IPPROTO_TCP); // ini the socket i guess
     assert(id_socket > 0); // just for debugging: make sure server is online
 	
 	// just a config for making a socket connection in case we want get data

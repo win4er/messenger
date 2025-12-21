@@ -13,12 +13,24 @@ const int AMOUNT = 32;
 int main(int argc, const char* argv[]) {
     printf("Server is up. Listening...\n");
 	
+	#ifdef _WIN32
+	WSADATA ws = {0};
+    int v = WSAStartup(MAKEWORD(2,2), &ws);
+	if (v != 0) {
+		printf("error initialising winsock: %d\n", v);
+        getchar();
+        return 1;
+    }
+	#endif
+
+
 	// here i can use 0 in 'protocol' arg
 	// as a default protocol,
 	// because i already
 	// selected TCP as a 'type' arg
 	int id_socket = socket(CFG::IPv4, CFG::TCP, IPPROTO_TCP);
-    assert(id_socket > 0);
+	printf("%d\n", id_socket);
+    assert(id_socket != SOCKET_ERROR);
 
     sockaddr_in addr;
     addr.sin_family = CFG::IPv4;
