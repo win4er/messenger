@@ -4,6 +4,7 @@
 #ifdef _WIN32 // to build project for windows systems
 #define WIN32_LEAN_AND_MEAN // to avoid conflicts
 #include <winsock2.h>
+#pragma comment(lib, "ws2_32.lib") // to link needed lib
 #endif
 
 #ifdef __linux__        // to build project for linux systems
