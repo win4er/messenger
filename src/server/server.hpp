@@ -27,12 +27,6 @@
 #include <chrono>       // to write some time-related bullshit
 #include <fstream>      // to make/write files
 
-bool check_w(std::string word1, std::string word2);
-bool check_id(std::vector<int> vector, int element);
-bool check_el(char* ar, char element);
-int get_id(std::vector<std::string> vector, std::string element);
-int get_id_s(std::vector<int> vector, int element);
-bool check_name(std::vector<std::string> ar, std::string element);
 std::string get_translate(std::string word);
 void* th1(void* arg);
 
