@@ -28,6 +28,6 @@
 #include <fstream>      // to make/write files
 
 std::string get_translate(std::string word);
-void* th1(void* arg);
+void* main_thread(void* arg);
 
 #endif

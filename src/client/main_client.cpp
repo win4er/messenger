@@ -8,7 +8,6 @@ enum CFG {
 };
 
 const char* ADDRESS = "127.0.0.1";
-char BUFFER[32] = {0};
 
 
 int main(int argc, char** argv) {

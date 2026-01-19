@@ -1,12 +1,13 @@
 #include "client.hpp"
 
+const int BUF_SIZE = 128;
+char BUFFER[BUF_SIZE] = {0};
+
 void thread_recv(int id_socket) {
 	// infinitive loop for receiving data from server
 	// later i will fix it, trust me
-	const int BUF_SIZE = 32;
-	extern char BUFFER[BUF_SIZE];
+    int count_bytes;
     while (true) {
-        int count_bytes;
         #ifdef _WIN32
         count_bytes = recv(id_socket, BUFFER, BUF_SIZE, 0);
         #endif
