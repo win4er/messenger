@@ -27,7 +27,39 @@
 #include <chrono>       // to write some time-related bullshit
 #include <fstream>      // to make/write files
 
-std::string get_translate(std::string word);
-void* main_thread(void* arg);
+void* recv_thread(void* arg);
+
+// size_t IPv4 = AF_INET;
+// size_t IPv6 = AF_INET6;
+// size_t TCP = SOCK_STREAM;
+// size_t UDP = SOCK_DGRAM;
+
+class Server {
+
+private:
+	size_t IPv;
+	size_t PROTOCOL;
+	size_t PORT;
+
+	size_t ID;
+	size_t AMOUNT;
+	size_t RES;
+		
+	int BUF_SIZE;
+	char* BUFFER;
+
+public:
+	Server(
+		size_t IP_v = AF_INET, //IPv4,
+		size_t Proto = SOCK_STREAM, //TCP,
+		size_t Port = 1,
+		size_t BufSize = 0
+	);
+	~Server();
+	friend void* recv_thread(void* arg);
+	
+	// WARNING: run func is depends on 'recv_thread' func
+	int run();
+};
 
 #endif
