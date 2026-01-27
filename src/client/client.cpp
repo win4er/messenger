@@ -78,13 +78,6 @@ void Client::thread_recv(int id_socket) {
 }
 
 Client::run() {
-    #ifdef _WIN32
-    send(this->ID, this->USERNAME.c_str(), this->USERNAME.size() + 1, 0);
-    #endif
-    #ifdef __linux__
-    write(this->ID, this->USERNAME.c_str(), this->USERNAME.size() + 1, 0);
-    #endif
-    
     std::thread th(thread_recv, this->ID);
     th.detach();
     
