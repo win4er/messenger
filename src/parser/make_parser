@@ -1,8 +1,0 @@
-all : scraper.o
-    g++ scraper.o -o parser
-
-scraper.o : scraper.cpp
-    g++ -c scraper.cpp -lcurl -lgumbo -std=c++11
-
-clean :
-    rm -rf *.o *.out parser
