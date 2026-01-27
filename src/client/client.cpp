@@ -55,7 +55,7 @@ Client::~Client() {
     #endif
 }
 
-void thread_recv(int id_socket) {
+void Client::thread_recv(int id_socket) {
 	size_t BUF_SIZE = 256;
 	char BUFFER[BUF_SIZE] = {0};
 
@@ -78,7 +78,6 @@ void thread_recv(int id_socket) {
 }
 
 Client::run() {
-	// here we see a connection, res = count of received bytes i guess
     #ifdef _WIN32
     send(this->ID, this->USERNAME.c_str(), this->USERNAME.size() + 1, 0);
     #endif
@@ -95,6 +94,7 @@ Client::run() {
     while (true) {
         message = "";
         std::cin >> message;
+		message = "["+this->USERNAME+"]" + message;
         #ifdef _WIN32
         send(this->ID, message.c_str(), message.size() + 1, 0);
         #endif

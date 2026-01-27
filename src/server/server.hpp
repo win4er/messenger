@@ -27,8 +27,6 @@
 #include <chrono>       // to write some time-related bullshit
 #include <fstream>      // to make/write files
 
-void* recv_thread(void* arg);
-
 // size_t IPv4 = AF_INET;
 // size_t IPv6 = AF_INET6;
 // size_t TCP = SOCK_STREAM;
@@ -56,7 +54,7 @@ public:
 		size_t BufSize = 0
 	);
 	~Server();
-	friend void* recv_thread(void* arg);
+	static void* recv_thread(void* arg);
 	
 	// WARNING: run func is depends on 'recv_thread' func
 	int run();

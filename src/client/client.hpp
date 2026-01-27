@@ -21,8 +21,6 @@
 #include <cstring>
 #include <thread>       // to make another thread, i need async programming later
 
-void thread_recv(int id_socket);
-
 // size_t IPv4 = AF_INET;
 // size_t IPv6 = AF_INET6;
 // size_t TCP = SOCK_STREAM;
@@ -52,6 +50,7 @@ public:
 	);
 	~Client();
 	int run();
+	static void thread_recv(int id_socket);
 };
 
 #endif

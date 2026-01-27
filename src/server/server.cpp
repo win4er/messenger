@@ -7,7 +7,7 @@
 // 4. make cipher-protocol
 // 5. make first tui->gui
 
-void* recv_thread(void* arg) {
+void* Server::recv_thread(void* arg) {
 	size_t BUF_SIZE = 256;
     char BUFFER[BUF_SIZE] = {0};
 
@@ -65,9 +65,9 @@ Server::Server(size_t IP_v, size_t Proto, size_t Port, size_t BufSize) {
 	
     this->RES = bind(this->ID, (sockaddr*)&addr, sizeof(addr));
     assert(RES == 0);
-    this->RES = listen(this->ID, AMOUNT);
+    this->RES = listen(this->ID, this->AMOUNT);
 
-	printf("Server is UP...");
+	printf("Server is UP...\n");
 }
 
 Server::~Server() {
