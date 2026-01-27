@@ -23,4 +23,35 @@
 
 void thread_recv(int id_socket);
 
+// size_t IPv4 = AF_INET;
+// size_t IPv6 = AF_INET6;
+// size_t TCP = SOCK_STREAM;
+// size_t UDP = SOCK_DGRAM;
+
+class Client {
+private:
+	size_t ID;
+	std::string USERNAME;
+	size_t RES;
+	
+	size_t IPv;
+	size_t PROTOCOL;
+	std::string SERVER_ADDRESS;
+	size_t PORT;
+	
+	size_t BUF_SIZE;
+	char* BUFFER;
+public:
+	Client(
+		std::string username = "User",
+		std::string address = "127.0.0.1",
+		size_t IP_v = AF_INET,
+		size_t protocol = SOCK_STREAM,
+		size_t port = 1,
+		size_t buffer_size = 256
+	);
+	~Client();
+	int run();
+};
+
 #endif
