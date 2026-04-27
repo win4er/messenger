@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/tetsu/projects/messenger/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

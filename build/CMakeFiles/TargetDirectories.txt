@@ -1,0 +1,3 @@
+/home/tetsu/projects/messenger/build/CMakeFiles/p2p_chat.dir
+/home/tetsu/projects/messenger/build/CMakeFiles/edit_cache.dir
+/home/tetsu/projects/messenger/build/CMakeFiles/rebuild_cache.dir
